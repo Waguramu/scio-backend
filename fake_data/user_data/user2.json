@@ -1,0 +1,11 @@
+{
+  "id": "2",
+  "firstName": "Harvey",
+  "lastName": "Specter",
+  "birthday": "01.01.1990",
+  "email": "harvey.specter@awesomecompany.de",
+  "tel": "089 222222",
+  "password": "sp3ct3r",
+  "user_history": "",
+  "attachments": ["", ""]
+}

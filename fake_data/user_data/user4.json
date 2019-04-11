@@ -1,0 +1,11 @@
+{
+  "id": "4",
+  "firstName": "Mike",
+  "lastName": "Ross",
+  "birthday": "01.03.1990",
+  "email": "mike.ross@awesomecompany.de",
+  "tel": "089 444444",
+  "password": "r0ss",
+  "user_history": "",
+  "attachments": ["", ""]
+}
