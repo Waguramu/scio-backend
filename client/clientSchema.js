@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
 var clientSchema = mongoose.Schema({
-    firstname: {
+    firstName: {
         type: String,
         unique: false
     },
-    lastname: {
+    lastName: {
         type: String,
         unique: false
     },
@@ -30,3 +30,5 @@ var clientSchema = mongoose.Schema({
         unique: false
     }
 });
+
+module.exports = mongoose.model('users', clientSchema);
