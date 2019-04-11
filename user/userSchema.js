@@ -35,6 +35,16 @@ var userSchema = mongoose.Schema({
         type: String,
         // required: true,
         unique: false
+    },
+    user_history: {
+        type: [String],
+        // required: true,
+        unique: false
+    },
+    attachments: {
+        type: [String],
+        // required: true,
+        unique: false
     }
 }, options);
 

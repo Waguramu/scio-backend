@@ -3,8 +3,10 @@ Config.db = {};
 Config.app={};
 Config.auth = {};
 
-Config.db.host = 'localhost:27017';
-Config.db.name = 'deepjurist';
+Config.db.host = '*';
+Config.db.name = '*';
+Config.db.user = '*';
+Config.db.name = '*';
 
 // Use environment defined port or 3000
 Config.app.port = process.env.PORT || 3000;
