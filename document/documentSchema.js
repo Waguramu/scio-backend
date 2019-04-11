@@ -1,27 +1,30 @@
 var mongoose = require('mongoose');
 
 var documentSchema = mongoose.Schema({
-    users: {
+    creator: {
         type: Schema.Types.ObjectId,
-        ref: 'users'
+        ref: 'user',
+        unique: true
     },
-    client: {
-        type: Schema.Types.ObjectId,
-        ref: 'client'
-    },
-    documentTitle: {
+    date: {
         type: String
     },
-    annotations: {
-        type: [String],
-        unique: false
+    title: {
+        type: String
     },
-    keypoints: {
-        type: [String],
-        unique: false
-    },
-    file: {
+    annotations: [{
         type: String,
+        unique: false
+    }],
+    keypoints: [{
+        type: String,
+        unique: false
+    }],
+    file: {
+        type: Schema.Types.ObjectId,
+        ref: 'file',
         unique: true
     }
 });
+
+module.exports = mongoose.model('document', documentSchema);
