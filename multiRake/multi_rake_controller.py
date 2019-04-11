@@ -9,5 +9,5 @@ keywords = rake.apply(text);
 
 keywords_filtered = [ word for word, match in keywords];
 
-for x in keywords_filtered:
+for x in keywords_filtered[:10]:
         print(x);
