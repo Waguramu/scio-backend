@@ -4,12 +4,12 @@ var bcrypt = require('bcrypt-nodejs');
 var options = {discriminatorKey: 'kind'};
 
 var userSchema = mongoose.Schema({
-    firstname: {
+    firstName: {
         type: String,
         // required: true,
         unique: false
     },
-    lastname: {
+    lastName: {
         type: String,
         // required: true,
         unique: false
@@ -23,6 +23,9 @@ var userSchema = mongoose.Schema({
         type: String,
         unique: true,
         required: true
+    },
+    tel: {
+        type: String
     },
     password: {
         type: String,
