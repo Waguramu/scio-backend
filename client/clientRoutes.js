@@ -12,8 +12,8 @@ function clientRoutes(passport) {
     //middleware
     router.use(mw.unless({method: ['GET']}));
 
-    router.post('/client', userController.clientById);
-    router.post('/list_clients', userController.listClients);
+    router.post('/client', clientController.clientById);
+    router.post('/list_clients', clientController.listClients);
 
     return router;
 }
