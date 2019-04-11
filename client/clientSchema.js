@@ -4,7 +4,7 @@ var clientSchema = mongoose.Schema({
     clientName: {
         type: String,
         unique: false
-    }
+    },
     firstName: {
         type: String,
         unique: false
