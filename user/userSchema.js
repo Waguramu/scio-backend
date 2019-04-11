@@ -36,16 +36,22 @@ var userSchema = mongoose.Schema({
         // required: true,
         unique: false
     },
-    user_history: {
-        type: [String],
-        // required: true,
-        unique: false
-    },
-    attachments: {
-        type: [String],
-        // required: true,
-        unique: false
-    }
+    user_history: [{
+        collections: [{
+            type: Schema.Types.ObjectId, ref: 'collection', unique: false
+        }],
+        documents: [{
+            type: Schema.Types.ObjectId, ref: 'document', unique: false
+        }]
+    }],
+    attachments: [{
+        collections: [{
+            type: Schema.Types.ObjectId, ref: 'collection', unique: false
+        }],
+        documents: [{
+            type: Schema.Types.ObjectId, ref: 'document', unique: false
+        }]
+    }]
 }, options);
 
 userSchema.pre('save', function(next) {
@@ -76,4 +82,4 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 };
 
 
-module.exports = mongoose.model('users', userSchema);
+module.exports = mongoose.model('user', userSchema);
