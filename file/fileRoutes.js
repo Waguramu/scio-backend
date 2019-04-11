@@ -10,11 +10,10 @@ function fileRoutes(passport) {
     mw.unless = unless;
 
     //middleware
-    router.use(mw.unless({method: ['GET','POST']}));
+    router.use(mw.unless({method: ['GET', 'POST']}));
 
     //router.post('/');
     router.post('/:id', fileController.uploadFile);
-    router.get('/:id', fileController.getFile);
 
     return router;
 }

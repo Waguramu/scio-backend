@@ -10,10 +10,10 @@ function collectiontRoutes(passport) {
     mw.unless = unless;
 
     //middleware
-    router.use(mw.unless({method: ['GET']}));
+    router.use(mw.unless({method: ['GET', 'POST']}));
 
     //router.post('/');
-
+    router.get('/:id', collectionController.getById());
 
     return router;
 }

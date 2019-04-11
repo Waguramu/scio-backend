@@ -10,10 +10,12 @@ function documentRoutes(passport) {
     mw.unless = unless;
 
     //middleware
-    router.use(mw.unless({method: ['GET']}));
+    router.use(mw.unless({method: ['GET', 'POST']}));
 
     //router.post('/');
-
+    router.get('/', documentController.get());
+    router.get('/:id', documentController.getById());
+    router.post('/:id', documentController.update());
 
     return router;
 }
