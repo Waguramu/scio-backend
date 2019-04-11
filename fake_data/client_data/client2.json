@@ -1,0 +1,11 @@
+{
+  "id": "b",
+  "clientName": "Siemens",
+  "firstName": "Joe",
+  "lastName": "Kaeser",
+  "birthday": "1980-06-01",
+  "address": "Werner-von-Siemens-Straße 1, 80333 München",
+  "email": "contact@siemens.com",
+  "phone": "+49 89 636-00",
+  "attachments": ["Memorandum 1", "Timetable 1"]
+}

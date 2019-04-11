@@ -1,0 +1,11 @@
+{
+  "id": "a",
+  "clientName": "BMW",
+  "firstName": "Harald",
+  "lastName": "Krüger",
+  "birthday": "1980-01-01",
+  "address": "Petuelring 124-130, 80809 München",
+  "email": "corporate.website@bmwgroup.com",
+  "phone": "+49 89 382-0",
+  "attachments": ["Memorandum 1", "Timetable 1"]
+}

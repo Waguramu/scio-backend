@@ -1,0 +1,11 @@
+{
+  "id": "3",
+  "firstName": "Rachel",
+  "lastName": "Zane",
+  "birthday": "01.12.1990",
+  "email": "rachel.zane@awesomecompany.de",
+  "tel": "089 333333",
+  "password": "z@n3",
+  "user_history": "",
+  "attachments": ["", ""]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "c",
+  "clientName": "Allianz",
+  "firstName": "Dr. Klaus-Peter",
+  "lastName": "Röhler",
+  "birthday": "1980-12-01",
+  "address": "Königinstraße 28, 80802 München",
+  "email": "info@allianz.de",
+  "phone": "+49 89 3800-0",
+  "attachments": ["Memorandum 1", "Timetable 1"]
+}
