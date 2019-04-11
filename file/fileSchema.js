@@ -10,3 +10,5 @@ var fileSchema = mongoose.Schema({
         unique: true
     }
 });
+
+module.exports = mongoose.model('file', fileSchema);

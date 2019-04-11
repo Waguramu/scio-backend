@@ -11,7 +11,7 @@ var clientSchema = mongoose.Schema({
     },
     birthday: {
         type: Date,
-        unique: true
+        unique: false
     },
     address: {
         type: String,
@@ -23,12 +23,16 @@ var clientSchema = mongoose.Schema({
     },
     phone: {
         type: String,
-        unique: true
-    },
-    attachments: {
-        type: [String],
         unique: false
-    }
+    },
+    attachments: [{
+        collections: [{
+            type: Schema.Types.ObjectId, ref: 'collection', unique: false
+        }],
+        documents: [{
+            type: Schema.Types.ObjectId, ref: 'document', unique: false
+        }]
+    }]
 });
 
-module.exports = mongoose.model('users', clientSchema);
+module.exports = mongoose.model('client', clientSchema);
