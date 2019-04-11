@@ -27,11 +27,16 @@ var userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    subscription: {
+        type: String,
+        // required: true,
+        unique: false
     }
 }, options);
 
 userSchema.pre('save', function(next) {
-    var user = this;
+    let user = this;
 
     // only hash the password if it has been modified (or is new)
     if (!user.isModified('password')) return next();
