@@ -13,9 +13,9 @@ function documentRoutes(passport) {
     router.use(mw.unless({method: ['GET', 'POST']}));
 
     //router.post('/');
-    router.get('/', documentController.get());
-    router.get('/:id', documentController.getById());
-    router.post('/:id', documentController.update());
+    router.get('/', documentController.get);
+    router.get('/:id', documentController.getById);
+    router.post('/:id', documentController.update);
 
     return router;
 }
