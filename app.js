@@ -4,10 +4,11 @@ let Config = require('./config/config.js');
  * DB connect
  */
 var mongoose = require('mongoose');
-mongoose.connect([Config.db.host, '/', Config.db.name].join(''),{
+mongoose.connect(Config.db.url, {
     //eventually it's a good idea to make this secure
     user: Config.db.user,
-    pass: Config.db.pass
+    pass: Config.db.pass,
+    useMongoClient: true
 });
 
 /**
