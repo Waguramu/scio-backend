@@ -1,4 +1,4 @@
-let Annotator = require('../multiRake/multi_rake_controller.py');
+let Annotator = require('../multi_rake_controller_python.py');
 var Document = require('./documentSchema');
 
 module.exports.get = function(id) {

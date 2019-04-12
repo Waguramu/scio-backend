@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var ObjectId = mongoose.ObjectID;
 
 var documentSchema = mongoose.Schema({
     creator: {
@@ -28,3 +30,4 @@ var documentSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('document', documentSchema);
+module.exports.documentSchema = documentSchema;

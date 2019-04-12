@@ -13,7 +13,7 @@ function collectiontRoutes(passport) {
     router.use(mw.unless({method: ['GET', 'POST']}));
 
     //router.post('/');
-    router.get('/:id', collectionController.getById());
+    router.get('/:id', collectionController.getById);
 
     return router;
 }

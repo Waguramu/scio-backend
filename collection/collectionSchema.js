@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var ObjectId = mongoose.ObjectID;
+var users = require('../user/userSchema');
+var documents = require('../document/documentSchema');
 
 var collectionSchema = mongoose.Schema({
-    creator: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-        unique: true
-    },
+    creator: users.userSchema,
     date: {
         type: String
     },
@@ -21,10 +21,7 @@ var collectionSchema = mongoose.Schema({
         type: String,
         unique: false
     },
-    documents: [{
-        type: ObjectId,
-        ref: 'document'
-    }]
+    documents: [documents.documentSchema]
 });
 
 module.exports = mongoose.model('collection', collectionSchema);

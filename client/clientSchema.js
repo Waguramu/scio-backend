@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var ObjectId = mongoose.ObjectID;
 
 var clientSchema = mongoose.Schema({
     clientName: {

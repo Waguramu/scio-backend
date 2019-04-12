@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var ObjectId = mongoose.ObjectID;
 var bcrypt = require('bcrypt-nodejs');
 
 var options = {discriminatorKey: 'kind'};
@@ -87,3 +89,4 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 
 
 module.exports = mongoose.model('user', userSchema);
+module.exports.userSchema = userSchema;
