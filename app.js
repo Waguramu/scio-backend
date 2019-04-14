@@ -51,11 +51,13 @@ let clientRoutes = require("./client/clientRoutes");
 let collectionRoutes = require("./collection/collectionRoutes");
 let documentRoutes = require("./document/documentRoutes");
 let fileRoutes = require("./file/fileRoutes");
+let annotationRoutes = require("./annotation/annotationRoutes");
 
 app.use('/api/user', userRoutes(passport));
 app.use('/api/client', clientRoutes(passport));
 app.use('/api/collection', collectionRoutes(passport));
 app.use('/api/document', documentRoutes(passport));
 app.use('/api/file', fileRoutes(passport));
+app.use('/api/annotation', annotationRoutes(passport));
 
 module.exports = app;
