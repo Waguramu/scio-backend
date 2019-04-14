@@ -6,7 +6,7 @@ var documentSchema = mongoose.Schema({
     creator: {
         type: Schema.Types.ObjectId,
         ref: 'user',
-        unique: true
+        unique: false
     },
     date: {
         type: String
