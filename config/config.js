@@ -3,9 +3,9 @@ Config.db = {};
 Config.app={};
 Config.auth = {};
 
-Config.db.url = 'mongodb://vpt1.org:29876/test';
+Config.db.url = 'mongodb+srv://cluster0-i3jck.gcp.mongodb.net';
 Config.db.user = 'deeplegal';
-Config.db.pass = 'd/o|F(/yY\\XjeD)a';
+Config.db.pass = 'CRFtI1BAtouDXn9O';
 
 // Use environment defined port or 3000
 Config.app.port = process.env.PORT || 3000;

@@ -4,12 +4,15 @@ let Config = require('./config/config.js');
  * DB connect
  */
 var mongoose = require('mongoose');
+
+console.log("Connecting to database: " + Config.db.url + " (" + Config.db.user + ", " + Config.db.pass + ")");
 mongoose.connect(Config.db.url, {
-    //eventually it's a good idea to make this secure
-    user: Config.db.user,
-    pass: Config.db.pass,
-    useMongoClient: true
-});
+    dbName: "test",
+    useNewUrlParser: true
+}).then(
+    () => console.log("Connection to database succeeded."),
+    (err) => console.log("Connection to database has failed: " + err)
+);
 
 /**
  * Create application
@@ -27,7 +30,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
