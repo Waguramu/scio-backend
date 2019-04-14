@@ -7,7 +7,6 @@ var mongoose = require('mongoose');
 
 console.log("Connecting to database: " + Config.db.url + " (" + Config.db.user + ", " + Config.db.pass + ")");
 mongoose.connect(Config.db.url, {
-    dbName: "test",
     useNewUrlParser: true
 }).then(
     () => console.log("Connection to database succeeded."),
