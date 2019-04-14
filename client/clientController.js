@@ -11,7 +11,7 @@ module.exports.clientById = function(req, res) {
             return;
         }
         if(!client) {
-            res.status(404).send("User not found.");
+            res.status(404).send("Client not found.");
             return;
         }
 
