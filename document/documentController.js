@@ -1,4 +1,4 @@
-let Annotator = require('../multiRake/multiRakeController');
+let Annotator = require('../annotation/multiRake/multiRakeController');
 var Document = require('./documentSchema');
 
 module.exports.get = function(id) {

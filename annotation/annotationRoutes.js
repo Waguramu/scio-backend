@@ -13,6 +13,8 @@ function annotationRoutes(passport) {
     router.use(mw.unless({method: ['GET']}));
 
     router.post('/extract', annotationController.extractAnnotations);
+    router.post('/search', annotationController.search);
+    router.post('/to_text', annotationController.toText);
 
     return router;
 }

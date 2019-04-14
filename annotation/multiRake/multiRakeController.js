@@ -1,7 +1,7 @@
 module.exports.extractAnnotations = function (text, callback) {
     var spawn = require('child_process').spawn;
     var process = spawn('python3', [
-        "multiRake/multi_rake_controller.py",
+        "annotation/multiRake/multi_rake_controller.py",
         text
     ]);
     var result = [];
