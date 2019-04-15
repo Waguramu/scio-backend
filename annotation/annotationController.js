@@ -11,7 +11,7 @@ module.exports.extractAnnotations = function(req, res) {
         res.status(400).send("Parameter text not provided.");
     }
     rake.extractAnnotations(req.body.text, annotations => {
-        res.status(200).send(annotations);
+        res.send(annotations);
     });
 };
 
