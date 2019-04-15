@@ -11,8 +11,8 @@ var sendJSONresponse = function(res, status, content) {
 };
 
 module.exports.login = function(req, res){
-    if(!req.body.email){
-        res.status(400).send('email required');
+    if(!req.body.username){
+        res.status(400).send('username required');
         return;
     }
     if(!req.body.password){
@@ -20,7 +20,7 @@ module.exports.login = function(req, res){
         return;
     }
 
-    User.findOne({email: req.body.email}, function(err, user){
+    User.findOne({username: req.body.username}, function(err, user){
 
         if (err) {
             res.status(500).send(err);
