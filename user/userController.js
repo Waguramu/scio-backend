@@ -10,6 +10,15 @@ var sendJSONresponse = function(res, status, content) {
     res.json(content);
 };
 
+module.exports.listUsers = function(req, res) {
+    User.find({}, function (err, users) {
+        if(err) {
+            res.status(500).send(err);
+        }
+        res.status(200).send(users);
+    })
+};
+
 module.exports.login = function(req, res){
     if(!req.body.username){
         res.status(400).send('username required');
