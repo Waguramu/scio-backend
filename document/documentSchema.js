@@ -23,9 +23,10 @@ var documentSchema = mongoose.Schema({
         unique: false
     }],
     file: {
-        type: Schema.Types.ObjectId,
-        ref: 'file',
-        unique: true
+        type: String,
+        // type: Schema.Types.ObjectId,
+        // ref: 'file',
+        // unique: true
     }
 });
 
