@@ -32,11 +32,12 @@ module.exports.search = function (req, res) {
 };
 
 module.exports.toText = function (req, res) {
-    if (!req.body) {
+    if (!req.body.file) {
         res.status(400).send('No file provided.');
         return;
     }
-    pdf.pdfToText(req.body, annotations => {
+    console.log(req.body.file);
+    pdf.pdfToText(req.body.file, annotations => {
         res.status(200).send(annotations);
     });
 };
