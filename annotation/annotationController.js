@@ -32,12 +32,15 @@ module.exports.search = function (req, res) {
 };
 
 module.exports.toText = function (req, res) {
-    if (!req.body.file) {
+    console.log('Received request for file conversion (' + req.files + ')');
+    if (!req.files || !req.files['file']) {
+        console.log('File missing (' + req.files + ')');
         res.status(400).send('No file provided.');
         return;
     }
-    console.log(req.body.file);
-    pdf.pdfToText(req.body.file, annotations => {
-        res.status(200).send(annotations);
+    console.log(JSON.stringify(req.files));
+    pdf.pdfToText(req.files['file'], annotations => {
+        console.log('Extracted annotations (size ' + annotations.length + ')');
+        res.status(200).send({annotations});
     });
 };

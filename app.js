@@ -18,6 +18,7 @@ mongoose.connect(Config.db.url, {
  */
 let express = require('express');
 let bodyParser = require('body-parser');
+let busboy = require('express-busboy');
 let cors = require('cors');
 let app = express();
 
@@ -33,6 +34,9 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
+});
+busboy.extend(app, {
+    upload: true,
 });
 
 /**

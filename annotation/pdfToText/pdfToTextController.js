@@ -1,7 +1,7 @@
 module.exports.pdfToText = function (file, callback) {
     var spawn = require('child_process').spawn;
     var process = spawn('pdftotext', [
-        "-",
+        file.file,
         "-"
     ]);
     var result = "";
@@ -12,10 +12,10 @@ module.exports.pdfToText = function (file, callback) {
         console.log(data.toString());
     });
     process.on('close', exit => {
-        console.log("pdftotext exited with result: " + exit + ", " + result);
+        console.log("pdftotext exited with result: " + exit);
         callback(result)
     });
-    process.stdin.write(file);
-    process.stdin.end();
+    // process.stdin.write(file);
+    // process.stdin.end();
     console.log("pdftotext launched.");
 };
