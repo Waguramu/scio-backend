@@ -28,7 +28,21 @@ var documentSchema = mongoose.Schema({
         // ref: 'file',
         // unique: true
     }
+
 });
+
+documentSchema.virtual('id').get(function () {
+    return this._id;
+});
+
+// Ensure virtual fields are serialised.
+documentSchema.set('toJSON', {
+    virtuals: true
+});
+documentSchema.set('toObject', {
+    virtuals: true
+});
+
 
 module.exports = mongoose.model('document', documentSchema);
 module.exports.documentSchema = documentSchema;

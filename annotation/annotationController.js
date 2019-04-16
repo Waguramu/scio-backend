@@ -6,8 +6,8 @@ var rake = require('./multiRake/multiRakeController');
 var pdf = require('./pdfToText/pdfToTextController');
 var Document = require('../document/documentSchema');
 
-module.exports.extractAnnotations = function(req, res) {
-    if(!req.body.text) {
+module.exports.extractAnnotations = function (req, res) {
+    if (!req.body.text) {
         res.status(400).send("Parameter text not provided.");
     }
     rake.extractAnnotations(req.body.text, annotations => {
@@ -25,8 +25,23 @@ module.exports.search = function (req, res) {
         {score: {$meta: "textScore"}}
     ).sort(
         {score: {$meta: "textScore"}}
-    ).then(
-        results => res.status(200).send(results),
+    ).lean().then(
+        results => {
+            var maxVal = Math.max.apply(Math, results.map(x => {
+                console.log("Score: " + x.score);
+                return x.score;
+            }));
+            console.log('Max value: ' + maxVal);
+            results.map(
+                x => {
+                    x.score = x.score / maxVal;
+                    x.id = x._id;
+                    return x;
+                }
+            );
+            res.status(200).send(results)
+        }
+        ,
         error => res.status(500).send("Query error: " + error)
     );
 };
