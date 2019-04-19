@@ -1,5 +1,5 @@
-# DeepJurist-backend
-Backend logic for DeepJurist framework
+# scio-backend
+Backend logic for scio framework
 
 ## Getting Started
 
